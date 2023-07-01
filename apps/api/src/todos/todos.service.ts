@@ -6,7 +6,11 @@ export class TodosService {
   private todosStore: Todo[] = [];
 
   add(text: string) {
-    this.todosStore.push({ text: text, isDone: false });
+    this.todosStore.push({
+      id: this.todosStore.length,
+      text: text,
+      isDone: false,
+    });
   }
 
   get() {
