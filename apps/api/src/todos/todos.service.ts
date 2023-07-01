@@ -8,4 +8,8 @@ export class TodosService {
   add(text: string) {
     this.todosStore.push({ text: text, isDone: false });
   }
+
+  get() {
+    return [...this.todosStore];
+  }
 }
