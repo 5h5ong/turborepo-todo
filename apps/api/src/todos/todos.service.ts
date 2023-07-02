@@ -16,4 +16,11 @@ export class TodosService {
   get() {
     return [...this.todosStore];
   }
+
+  toggle(id: number) {
+    const toggledStore = this.todosStore.map((value) =>
+      value.id === id ? { ...value, isDone: !value.isDone } : { ...value },
+    );
+    this.todosStore = [...toggledStore];
+  }
 }
