@@ -23,4 +23,8 @@ export class TodosService {
     );
     this.todosStore = [...toggledStore];
   }
+
+  delete(id: number) {
+    this.todosStore = this.todosStore.filter((value) => value.id !== id);
+  }
 }

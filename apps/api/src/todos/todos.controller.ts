@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AddTodoDto } from './dtos/add-todo.dto';
 import { TodosService } from './todos.service';
-import { ToggleTodoDto } from './dtos/toggle-todo.dto';
+import { SelectTodoDtio } from './dtos/select-todo.dto';
 
 @Controller('todos')
 export class TodosController {
@@ -19,8 +19,14 @@ export class TodosController {
   }
 
   @Post('toggle')
-  toggleTodo(@Body() toggleTodoDto: ToggleTodoDto) {
+  toggleTodo(@Body() toggleTodoDto: SelectTodoDtio) {
     const { id } = toggleTodoDto;
     this.todosService.toggle(id);
+  }
+
+  @Post('delete')
+  deleteTodo(@Body() deleteTodo: SelectTodoDtio) {
+    const { id } = deleteTodo;
+    this.todosService.delete(id);
   }
 }

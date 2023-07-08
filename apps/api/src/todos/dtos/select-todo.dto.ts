@@ -1,6 +1,6 @@
 import { IsNumber } from 'class-validator';
 
-export class ToggleTodoDto {
+export class SelectTodoDtio {
   @IsNumber()
   id: number;
 }
