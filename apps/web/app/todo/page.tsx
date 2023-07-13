@@ -1,10 +1,10 @@
-import Todo from "./components/Todo";
+import TodoList from "./components/TodoList";
 
 export default function Page() {
   return (
     <>
       <div>Chat Page</div>
-      <Todo text="hello!" isDone={false} />
+      <TodoList />
     </>
   );
 }
