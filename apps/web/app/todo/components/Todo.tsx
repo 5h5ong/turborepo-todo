@@ -8,11 +8,8 @@ interface TodoProps {
 }
 
 export default function Todo({ text, isDone, id, toggleCallback }: TodoProps) {
-  const { mutate } = useSWRConfig();
-
   function toggleOnclick() {
     toggleCallback(id);
-    mutate("http://localhost:4000/todos");
   }
 
   return (

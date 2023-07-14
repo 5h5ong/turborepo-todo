@@ -5,7 +5,10 @@ import fetcher from "../../../utils/fetcher";
 import Todo from "./Todo";
 
 export default function TodoList() {
-  const { data, isLoading } = useSWR("http://localhost:4000/todos", fetcher);
+  const { data, isLoading, mutate } = useSWR(
+    "http://localhost:4000/todos",
+    fetcher
+  );
 
   async function toggleTodoStatus(id: number) {
     await fetch("http://localhost:4000/todos/toggle", {
@@ -17,6 +20,7 @@ export default function TodoList() {
         id: id,
       }),
     });
+    mutate();
   }
 
   return (
