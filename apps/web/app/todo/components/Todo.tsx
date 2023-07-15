@@ -1,5 +1,3 @@
-import { useSWRConfig } from "swr";
-
 interface TodoProps {
   text: string;
   isDone: boolean;

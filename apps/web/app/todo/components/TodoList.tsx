@@ -2,10 +2,14 @@
 
 import useSWR from "swr";
 import fetcher from "../../../utils/fetcher";
+import { Todo as TodoInterface } from "types";
 import Todo from "./Todo";
 
 export default function TodoList() {
-  const { data, isLoading, mutate } = useSWR("/todos", fetcher);
+  const { data, isLoading, mutate } = useSWR<TodoInterface[]>(
+    "/todos",
+    fetcher
+  );
 
   async function toggleTodoStatus(id: number) {
     await fetch("/todos/toggle", {
