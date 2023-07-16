@@ -24,6 +24,19 @@ export default function TodoList() {
     mutate();
   }
 
+  async function todoDelete(id: number) {
+    await fetch("/todos/delete", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: id,
+      }),
+    });
+    mutate();
+  }
+
   return (
     <>
       {!isLoading
@@ -34,6 +47,7 @@ export default function TodoList() {
               text={value.text}
               isDone={value.isDone}
               toggleCallback={toggleTodoStatus}
+              deleteCallback={todoDelete}
             />
           ))
         : "Loading..."}
