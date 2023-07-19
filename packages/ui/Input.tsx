@@ -6,7 +6,7 @@ interface InputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function Input({ placeholder, value, onChange }: InputProps) {
+export function Input({ placeholder, value, onChange }: InputProps) {
   return (
     <input
       placeholder={placeholder}
