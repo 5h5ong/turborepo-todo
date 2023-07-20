@@ -1,4 +1,5 @@
 import { Button } from "ui";
+import styles from "../styles.module.css";
 
 interface TodoProps {
   text: string;
@@ -24,7 +25,7 @@ export default function Todo({
   }
 
   return (
-    <div>
+    <div className={styles.todo}>
       <div onClick={() => toggleOnclick()}>
         {isDone ? "DONE" : "TODO"} - {text}
       </div>

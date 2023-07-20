@@ -5,6 +5,7 @@ import fetcher from "../../../utils/fetcher";
 import { Todo as TodoInterface } from "types";
 import Todo from "./Todo";
 import AddTodo from "./AddTodo";
+import styles from "../styles.module.css";
 
 export default function TodoList() {
   const { data, isLoading, mutate } = useSWR<TodoInterface[]>(
@@ -52,7 +53,7 @@ export default function TodoList() {
   }
 
   return (
-    <>
+    <div className={styles.todoList}>
       <AddTodo createNewTodo={createTodo} />
       {!isLoading
         ? data.map((value) => (
@@ -66,6 +67,6 @@ export default function TodoList() {
             />
           ))
         : "Loading..."}
-    </>
+    </div>
   );
 }

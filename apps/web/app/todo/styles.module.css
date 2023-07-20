@@ -1,0 +1,19 @@
+.todoPage {
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoList {
+  width: 750px;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+}
+
+.addTodo {
+  display: flex;
+}

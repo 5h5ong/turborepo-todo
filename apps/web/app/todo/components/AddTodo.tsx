@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button, Input } from "ui";
+import styles from "../styles.module.css";
 
 interface AddTodoProps {
   createNewTodo: (todoText: string) => Promise<void>;
@@ -20,13 +21,13 @@ export default function AddTodo({ createNewTodo }: AddTodoProps) {
   }
 
   return (
-    <>
+    <div className={styles.addTodo}>
       <Input
         placeholder="새로운 TODO를 등록해 보세요."
         value={value}
         onChange={onChange}
       />
       <Button text="추가" onClick={onClick} />
-    </>
+    </div>
   );
 }
