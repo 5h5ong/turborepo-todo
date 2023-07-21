@@ -29,7 +29,9 @@ export default function Todo({
       <div onClick={() => toggleOnclick()}>
         {isDone ? "DONE" : "TODO"} - {text}
       </div>
-      <Button text="삭제" onClick={() => deleteOnClick()} />
+      <div className={styles.todoButtonContainer}>
+        <Button text="삭제" onClick={() => deleteOnClick()} />
+      </div>
     </div>
   );
 }

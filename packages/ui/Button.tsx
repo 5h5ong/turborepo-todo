@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import styles from "./button.module.css";
 
 interface ButtonProps {
   text: string;
@@ -8,5 +9,9 @@ interface ButtonProps {
 }
 
 export const Button = ({ text, onClick }: ButtonProps) => {
-  return <button onClick={() => onClick()}>{text}</button>;
+  return (
+    <button className={styles.button} onClick={() => onClick()}>
+      {text}
+    </button>
+  );
 };

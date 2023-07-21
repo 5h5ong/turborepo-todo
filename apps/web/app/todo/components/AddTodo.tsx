@@ -27,7 +27,9 @@ export default function AddTodo({ createNewTodo }: AddTodoProps) {
         value={value}
         onChange={onChange}
       />
-      <Button text="추가" onClick={onClick} />
+      <div className={styles.addTodoButtonContainer}>
+        <Button text="추가" onClick={onClick} />
+      </div>
     </div>
   );
 }

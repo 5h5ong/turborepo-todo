@@ -9,11 +9,21 @@
   width: 750px;
 }
 
+.addTodo {
+  display: flex;
+}
+
+.addTodoButtonContainer {
+  display: flex;
+  width: 75px;
+}
+
 .todo {
   display: flex;
   flex-direction: row;
 }
 
-.addTodo {
+.todoButtonContainer {
   display: flex;
+  width: 50px;
 }
