@@ -55,18 +55,20 @@ export default function TodoList() {
   return (
     <div className={styles.todoList}>
       <AddTodo createNewTodo={createTodo} />
-      {!isLoading
-        ? data.map((value) => (
-            <Todo
-              key={`todo-${value.id}`}
-              id={value.id}
-              text={value.text}
-              isDone={value.isDone}
-              toggleCallback={toggleTodoStatus}
-              deleteCallback={todoDelete}
-            />
-          ))
-        : "Loading..."}
+      <div>
+        {!isLoading
+          ? data.map((value) => (
+              <Todo
+                key={`todo-${value.id}`}
+                id={value.id}
+                text={value.text}
+                isDone={value.isDone}
+                toggleCallback={toggleTodoStatus}
+                deleteCallback={todoDelete}
+              />
+            ))
+          : "Loading..."}
+      </div>
     </div>
   );
 }

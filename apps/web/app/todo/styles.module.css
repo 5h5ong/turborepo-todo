@@ -6,11 +6,15 @@
 }
 
 .todoList {
+  display: flex;
+  flex-direction: column;
   width: 750px;
+  row-gap: 1rem;
 }
 
 .addTodo {
   display: flex;
+  column-gap: 0.5rem;
 }
 
 .addTodoButtonContainer {
@@ -21,6 +25,7 @@
 .todo {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .todoButtonContainer {
